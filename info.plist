@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.ndcorder.alfred-repo-launcher</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>7996DEDC-0A3D-4EEA-BA86-35CE165D7F6D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93DF784E-55CD-443A-A910-BF52C3340CFE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DB45D635-57F2-49D0-822F-05E6395837D1</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open in Fork</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>688F4A98-1C67-48AE-A207-BD45293843F4</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open a terminal here</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>08D50E35-4A96-432D-BF69-94924059F86C</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Start Claude Code here</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>38C057CA-DF90-4F85-A88A-9C00260FBA18</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal in Finder</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Nicolas Corder</string>
+	<key>description</key>
+	<string>Open local git repos in the right JetBrains IDE, Fork, a terminal or Claude Code</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Repo Launcher</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>repo</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Scanning repos…</string>
+				<key>script</key>
+				<string>/usr/bin/python3 -B repo.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Type part of a repo name</string>
+				<key>title</key>
+				<string>Open a git repo</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7996DEDC-0A3D-4EEA-BA86-35CE165D7F6D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/python3 -B repo.py --open "$ide" "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>93DF784E-55CD-443A-A910-BF52C3340CFE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/open -a Fork "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DB45D635-57F2-49D0-822F-05E6395837D1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>688F4A98-1C67-48AE-A207-BD45293843F4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>08D50E35-4A96-432D-BF69-94924059F86C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/open -R "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>38C057CA-DF90-4F85-A88A-9C00260FBA18</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Keyword: repo
+
+Finds git repos under REPO_ROOTS (colon-separated, default ~/Projects:~/Developer) down to REPO_DEPTH levels (default 4). Does not descend into repos; skips node_modules, vendor, .venv, venv, dist, build and dot-directories. Index cached for 5 minutes in the workflow cache; a query with no hits rescans at once.
+
+Subtitle: path · branch (or short SHA when detached; worktrees followed) · IDE.
+IDE from top-level files, first match wins: .sln/.csproj/.fsproj rider, composer.json phpstorm, go.mod goland, Cargo.toml rustrover, pyproject.toml/setup.py/requirements.txt pycharm, package.json/deno.json webstorm, else IDE_DEFAULT (default phpstorm). Launchers in /usr/local/bin. ↩ reads the app binary from the Toolbox launcher and runs open -na &lt;binary&gt; --args &lt;path&gt; (the launcher breaks paths with spaces); falls back to the launcher, then to open &lt;path&gt;.
+
+↩  open in detected IDE
+⌘↩ open in Fork
+⌥↩ terminal at the repo (Alfred's Terminal setting)
+⌃↩ terminal + CLAUDE_CMD (default claude) in the repo
+⇧↩ reveal in Finder
+⌘C copy path
+
+Tests: /usr/bin/python3 -B -m unittest test_repo</string>
+	<key>uidata</key>
+	<dict>
+		<key>08D50E35-4A96-432D-BF69-94924059F86C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>470</integer>
+		</dict>
+		<key>38C057CA-DF90-4F85-A88A-9C00260FBA18</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>610</integer>
+		</dict>
+		<key>688F4A98-1C67-48AE-A207-BD45293843F4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>330</integer>
+		</dict>
+		<key>7996DEDC-0A3D-4EEA-BA86-35CE165D7F6D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>330</integer>
+		</dict>
+		<key>93DF784E-55CD-443A-A910-BF52C3340CFE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>DB45D635-57F2-49D0-822F-05E6395837D1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~/Projects:~/Developer</string>
+				<key>placeholder</key>
+				<string>~/Projects:~/Developer</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Colon-separated folders to search for git repos.</string>
+			<key>label</key>
+			<string>Search folders</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>REPO_ROOTS</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>4</string>
+				<key>placeholder</key>
+				<string>4</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>How many folder levels below each search folder to look.</string>
+			<key>label</key>
+			<string>Search depth</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>REPO_DEPTH</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>phpstorm</string>
+				<key>placeholder</key>
+				<string>phpstorm</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>JetBrains launcher used when a project has no recognised marker file: phpstorm, webstorm, rider, pycharm, goland or rustrover.</string>
+			<key>label</key>
+			<string>Default IDE</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>IDE_DEFAULT</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>claude</string>
+				<key>placeholder</key>
+				<string>claude</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Command run in the terminal by ctrl+return.</string>
+			<key>label</key>
+			<string>Claude Code command</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>CLAUDE_CMD</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/ndcorder/alfred-repo-launcher</string>
+</dict>
+</plist>
